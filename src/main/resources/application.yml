@@ -1,0 +1,22 @@
+quarkus:
+  log:
+    json:
+      log-format: ecs
+      fields:
+        mdc:
+          flat-fields: true
+        timestamp:
+          field-name: '@timestamp'
+        level:
+          field-name: log.level
+        logger-name:
+          field-name: log.logger
+  kotlin-serialization:
+    json:
+      ignore-unknown-keys: true
+
+"%test":
+  quarkus:
+    log:
+      console:
+        enable: false
